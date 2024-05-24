@@ -23,6 +23,13 @@ export const CuartoComponente = () => {
     console.log(`has ${action} la box `);
   };
 
+  const insideInput = (e) => {
+    console.log("estas dento del input");
+  };
+  const outsideInput = (e) => {
+    console.log("estas fuera del input");
+  };
+
   return (
     <div>
       <h2>Eventos en React</h2>
@@ -69,7 +76,16 @@ export const CuartoComponente = () => {
           <p>¡pasa el mous por ensima!</p>
         </div>
       </div>
-      {/* Evento Focus y Blur */}
+
+      {/* Evento Focus y Blur se utiliza en el input */}
+      <div className="mt-5">
+        <input
+          type="text"
+          placeholder="Escribe un nombre"
+          onBlur={outsideInput}
+          onFocus={insideInput}
+        />
+      </div>
     </div>
   );
 };
